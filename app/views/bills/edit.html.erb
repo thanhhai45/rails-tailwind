@@ -1,3 +1,5 @@
 <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Edit Bill with tile: <%= @bill.title%></h5>
 
-<%= render "form", bill: @bill %>
+<%= turbo_frame_tag dom_id(@bill) do %>
+  <%= render "form", bill: @bill, btn_name: 'Update' %>
+<% end %>
