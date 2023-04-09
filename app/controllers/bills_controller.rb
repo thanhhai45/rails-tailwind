@@ -38,10 +38,9 @@ class BillsController < ApplicationController
     respond_to do |format|
       if @bill.update(bill_params)
         format.html { redirect_to bill_url(@bill), notice: "Bill was successfully updated." }
-        format.json { render :show, status: :ok, location: @bill }
+        format.turbo_stream
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @bill.errors, status: :unprocessable_entity }
       end
     end
   end
