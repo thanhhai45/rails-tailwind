@@ -3,7 +3,7 @@ class BillsController < ApplicationController
 
   # GET /bills or /bills.json
   def index
-    @bills = Bill.all
+    @bills = Bill.all.order(created_at: :desc)
   end
 
   # GET /bills/1 or /bills/1.json
@@ -26,10 +26,9 @@ class BillsController < ApplicationController
     respond_to do |format|
       if @bill.save
         format.html { redirect_to bill_url(@bill), notice: "Bill was successfully created." }
-        format.json { render :show, status: :created, location: @bill }
+        format.turbo_stream
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @bill.errors, status: :unprocessable_entity }
       end
     end
   end

@@ -1,17 +1,13 @@
 <h1 class="container mx-auto w-full text-5xl font-bold text-center my-4">Turbo Hotwire with Rails + Tailwindcss</h1>
 <div class="container mx-auto w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-    <%= turbo_frame_tag "new_bill" do %>
-      <div class="flex items-center justify-between mb-4">
-          <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">Bills</h5>
-          <%= link_to "New bill", new_bill_path, class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-blue-400"%>
-    </div>
-   <% end %>
-   <div class="flow-root">
-        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
-          <%- @bills.each do |bill|%>  
-            <%= render 'bill', bill: bill %>           
-          <% end %>  
-        </ul>
-   </div>
+  <%= render "bills/header" %>  
+  
+  <div class="flow-root">
+      <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+        <%= turbo_frame_tag 'bills' do %>
+          <%= render @bills %> 
+        <% end %>
+      </ul>
+  </div>
 </div>
 
