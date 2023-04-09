@@ -1,7 +1,13 @@
-<div id="<%= dom_id bill %>">
-  <p>
-    <strong>Title:</strong>
-    <%= bill.title %>
-  </p>
-
-</div>
+<li id=<%= dom_id(bill) %> class="py-3 sm:py-4">
+    <div class="flex items-center space-x-4">
+        <div class="flex-1 min-w-0">
+            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
+                <%= bill.title %> 
+            </p>
+        </div>
+        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white justify-evenly">
+          <%= link_to "Edit", edit_bill_path(bill), class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-green-400 mr-2"%>
+          <%= button_to "Delete", bill, method: :delete, class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-red-400"%>
+        </div>
+    </div>
+</li>

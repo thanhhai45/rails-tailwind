@@ -1,2 +1,5 @@
 <h5 class="text-xl font-bold leading-none text-gray-900 dark:text-white">New Bills</h5>
-<%= render "form", bill: @bill %>
+
+<%= turbo_frame_tag "new_bill" do %>
+  <%= render "form", bill: @bill, btn_name: 'Create' %>
+<% end %>
