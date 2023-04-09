@@ -51,7 +51,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       format.html { redirect_to bills_url, notice: "Bill was successfully destroyed." }
-      format.json { head :no_content }
+      format.turbo_stream
     end
   end
 
