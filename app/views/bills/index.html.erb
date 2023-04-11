@@ -1,7 +1,7 @@
 <h1 class="container mx-auto w-full text-5xl font-bold text-center my-4">Turbo Hotwire with Rails + Tailwindcss</h1>
 <div class="container mx-auto w-full max-w-lg p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
   <%= render "bills/header" %>  
-  <%= turbo_stream_from "quotes" %> 
+  <%= turbo_stream_from "bill_broadcast" %> 
   <div class="flow-root">
       <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
         <%= turbo_frame_tag 'bills' do %>
