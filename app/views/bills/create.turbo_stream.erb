@@ -1,2 +1,3 @@
 <%= turbo_stream.prepend 'bills', partial: 'bills/bill', locals: { bill: @bill } %>
 <%= turbo_stream.update dom_id(Bill.new), partial: 'bills/header' %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
