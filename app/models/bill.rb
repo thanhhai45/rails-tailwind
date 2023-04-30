@@ -3,5 +3,5 @@ class Bill < ApplicationRecord
   after_update_commit -> { broadcast_replace_to "quotes" }
   after_destroy_commit -> { broadcast_remove_to "quotes" }
 
-  has_many :list_items
+  has_many :list_items, dependent: :destroy
 end
