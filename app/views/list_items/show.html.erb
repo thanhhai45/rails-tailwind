@@ -1,0 +1,24 @@
+<p style="color: green"><%= notice %></p>
+
+<table class="table-auto">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Quanity</th>
+      <th>Unit price</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+  </tbody>
+</table>
+
+
+<%= render @list_item %>
+
+<div>
+  <%= link_to "Edit this list item", edit_list_item_path(@list_item) %> |
+  <%= link_to "Back to list items", list_items_path %>
+
+  <%= button_to "Destroy this list item", @list_item, method: :delete %>
+</div>

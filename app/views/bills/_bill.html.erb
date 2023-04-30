@@ -1,15 +1,19 @@
-<li id=<%= dom_id(bill) %> class="py-3 sm:py-4">
+<li class="py-5 border-t-2 border-slate-300" id=<%= dom_id(bill) %>>
   <%= turbo_frame_tag dom_id(bill) do %>
-    <div class="flex items-center space-x-4">
-        <div class="flex-1 min-w-0">
-            <p class="text-sm font-medium text-gray-900 truncate dark:text-white">
-                <%= bill.title %> 
-            </p>
-        </div>
-        <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white justify-evenly">
-          <%= link_to "Edit", edit_bill_path(bill), class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-green-400 mr-2"%>
-          <%= button_to "Delete", bill, method: :delete, class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-red-400"%>
-        </div>
-    </div>
-  <% end %>  
+    <div class="flex items-center space-x-4 bg-white py-6 shadow-slate-200">
+      <div class="flex-1 min-w-0">
+        <p class="text-2xl font-medium text-gray-900 truncate dark:text-white">
+            <%= bill.title %> 
+        </p>
+      </div>
+      <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white justify-evenly">
+        <%= link_to "Edit Bill", edit_bill_path(bill), class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-green-400 mr-2"%>
+        <%= button_to "Delete Bill", bill, method: :delete, class: "text-sm font-medium text-white hover:text-slate-950 dark:text-white p-2 rounded-lg bg-red-400"%>
+      </div>
+    </div> 
+  <% end %>
+
+  <div class="py-2">
+    <%= render 'bills/list_items/list', bill: bill%>
+  </div>
 </li>

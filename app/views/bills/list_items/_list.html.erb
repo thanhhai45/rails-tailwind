@@ -1,0 +1,16 @@
+<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+  <div class="flex justify-between items-center w-full bg-gray-300 px-4">
+    <div class="p-auto text-xl w-40">Title</div>
+    <div class="p-auto text-xl w-40">Quantity</div>
+    <div class="p-auto text-xl w-40">Amount</div>
+    <div class="p-auto text-xl w-40">Action</div>
+  </div>
+
+  <%= turbo_frame_tag 'list_item' do %>
+    <%- bill.list_items.recent.each do |item| %>
+      <%= render "list_items/list_item", list_item: item %>
+    <% end %>
+  <% end %>
+
+  <%= render "bills/list_items/new", bill: bill %>
+</div>

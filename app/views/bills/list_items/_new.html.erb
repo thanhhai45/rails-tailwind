@@ -1,0 +1,5 @@
+<%= turbo_frame_tag 'list_item_new' do %>
+  <div class="flex justify-center items-center w-40 py-4 mx-auto">
+    <%= link_to 'Add new item', new_bill_list_item_path(bill_id: bill.id), class: "bg-blue-600 p-2 rounded-md text-white" %>
+  </div>
+<% end %>

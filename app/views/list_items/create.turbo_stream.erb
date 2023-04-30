@@ -1,0 +1,3 @@
+<%= turbo_stream.prepend 'list_item', partial: 'list_items/list_item', locals: { list_item: @list_item } %>
+<%= turbo_stream.update 'list_item_new', partial: 'bills/list_items/new', locals: {bill: @bill} %>
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
